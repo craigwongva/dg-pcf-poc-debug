@@ -8,8 +8,8 @@
   <packaging>grails-app</packaging>
   <version>1.0-SNAPSHOT</version>
   
-  <name>A customary grails project</name>
-  <description>A customary grails project</description>
+  <name>myfirstapp</name>
+  <description>myfirstapp</description>
   <url>http://www.myorganization.org</url>
   
   <properties>
