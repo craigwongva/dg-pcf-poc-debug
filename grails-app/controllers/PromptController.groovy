@@ -6,6 +6,8 @@ class PromptController {
 
  def index() { 
 /*
+  //this is a temporary server, managed via secgrp,
+  // using well-publicized user/password
   String RESTURL  = "http://35.166.184.150/geoserver"
   //String RESTURL  = "http://localhost:8080/geoserver";
   String RESTUSER = "admin";
