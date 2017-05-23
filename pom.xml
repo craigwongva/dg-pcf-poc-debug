@@ -71,7 +71,7 @@
       <type>zip</type>
       <scope>runtime</scope>
     </dependency> 
-    
+<!-- Remove for DG Jenkins
     <dependency>
       <groupId>org.grails.plugins</groupId>
       <artifactId>database-migration</artifactId>
@@ -79,7 +79,7 @@
       <type>zip</type>
       <scope>runtime</scope>
     </dependency>   
-
+-->
     <dependency>
       <groupId>org.grails.plugins</groupId>
       <artifactId>cache</artifactId>
