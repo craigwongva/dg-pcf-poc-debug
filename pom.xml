@@ -14,6 +14,7 @@
   
   <properties>
     <grails.version>2.3.4</grails.version>
+    <scream>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaargh</scream>
   </properties>
 
   <dependencies>

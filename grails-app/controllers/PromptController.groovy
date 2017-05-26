@@ -18,6 +18,17 @@ class PromptController {
         jsonSlurper = new JsonSlurper()
     }
 
+    def getproperty() {
+	String s = System.getenv('MAVEN_CMD_LINE_ARGS')
+	def t = s.split('-D')
+	t.each { u ->
+	    def v = u.split('=')
+	    if (v[0] == 'alpha') println "alpha is ${v[1]}"
+	    if (v[0] == 'beta')  println "beta is ${v[1]}"
+	}
+        render "Look at println output for getenv() info"
+    }
+
     def myIP() {
         def myprocess = [ 'bash', '-c', "curl http://169.254.169.254/latest/meta-data/public-ipv4" ].execute()
         myprocess.waitFor()
