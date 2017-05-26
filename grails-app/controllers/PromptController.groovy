@@ -8,15 +8,7 @@ class PromptController {
 
     Connection conn
     def jsonSlurper
-
-    PromptController() {
-        Class.forName("org.h2.Driver");
-        conn = DriverManager.
-            getConnection("jdbc:h2:tcp://localhost/~/univision", "sa", "");
-            //getConnection("jdbc:h2:~/test", "sa", "");
-            //getConnection("jdbc:h2:mem:test", "sa", "");
-        jsonSlurper = new JsonSlurper()
-    }
+    String geoserverPassword
 
     def getproperty() {
 	String s = System.getenv('MAVEN_CMD_LINE_ARGS')
@@ -25,6 +17,7 @@ class PromptController {
 	    def v = u.split('=')
 	    if (v[0] == 'alpha') println "alpha is ${v[1]}"
 	    if (v[0] == 'beta')  println "beta is ${v[1]}"
+	    if (v[0] == 'geoserverPassword')  geoserverPassword = v[1]
 	}
         render "Look at println output for getenv() info"
     }
@@ -38,21 +31,21 @@ class PromptController {
     }
 
  def index() { 
-
+/*
   //this is a temporary server, managed via secgrp,
   // using well-publicized user/password
   //String RESTURL  = "http://35.166.184.150/geoserver" 
-  String RESTURL  = "http://107.20.19.57/geoserver" 
+  String RESTURL  = "http://172.31.9.205:80/geoserver" 
   //String RESTURL  = "http://localhost:8080/geoserver";
   String RESTUSER = "admin";
-  String RESTPW   = "geoserver";
+  String RESTPW   = "xxx" //geoserverPassword
   GeoServerRESTReader reader = new GeoServerRESTReader(RESTURL, RESTUSER, RESTPW);
   GeoServerRESTPublisher publisher = new GeoServerRESTPublisher(RESTURL, RESTUSER, RESTPW);
-  boolean created = publisher.createWorkspace("wedWorkspace")
+  boolean created = publisher.createWorkspace("FriWorkspace")
   println created
 
   println "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqwednesdayqqqqqqqqqqqqqq"
-
+*/
 /*
 	def env = System.getenv()
 	def vcs = env.grep{it.key=='VCAP_SERVICES'} 
