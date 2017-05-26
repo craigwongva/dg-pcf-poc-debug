@@ -5,19 +5,20 @@ import it.geosolutions.geoserver.rest.GeoServerRESTPublisher
 class PromptController {
 
  def index() { 
-/*
+
   //this is a temporary server, managed via secgrp,
   // using well-publicized user/password
-  String RESTURL  = "http://35.166.184.150/geoserver"
+  //String RESTURL  = "http://35.166.184.150/geoserver" 
+  String RESTURL  = "http://107.20.19.57/geoserver" 
   //String RESTURL  = "http://localhost:8080/geoserver";
   String RESTUSER = "admin";
   String RESTPW   = "geoserver";
   GeoServerRESTReader reader = new GeoServerRESTReader(RESTURL, RESTUSER, RESTPW);
   GeoServerRESTPublisher publisher = new GeoServerRESTPublisher(RESTURL, RESTUSER, RESTPW);
-  boolean created = publisher.createWorkspace("victoryWorkspace")
+  boolean created = publisher.createWorkspace("wedWorkspace")
   println created
-*/
-  println "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpost-standupqqqqqqqqqqqqqq"
+
+  println "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqwednesdayqqqqqqqqqqqqqq"
 
 /*
 	def env = System.getenv()
