@@ -1,8 +1,30 @@
 import it.geosolutions.geoserver.rest.GeoServerRESTReader
 import it.geosolutions.geoserver.rest.GeoServerRESTPublisher
-//import groovy.json.*
+
+import groovy.json.*
+import java.sql.*
 
 class PromptController {
+
+    Connection conn
+    def jsonSlurper
+
+    PromptController() {
+        Class.forName("org.h2.Driver");
+        conn = DriverManager.
+            getConnection("jdbc:h2:tcp://localhost/~/univision", "sa", "");
+            //getConnection("jdbc:h2:~/test", "sa", "");
+            //getConnection("jdbc:h2:mem:test", "sa", "");
+        jsonSlurper = new JsonSlurper()
+    }
+
+    def myIP() {
+        def myprocess = [ 'bash', '-c', "curl http://169.254.169.254/latest/meta-data/public-ipv4" ].execute()
+        myprocess.waitFor()
+        String myprocessAsText = myprocess.text
+
+        render myprocessAsText
+    }
 
  def index() { 
 
