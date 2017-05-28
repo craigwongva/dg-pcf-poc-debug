@@ -31,21 +31,22 @@ class PromptController {
     }
 
  def index() { 
-/*
+
   //this is a temporary server, managed via secgrp,
   // using well-publicized user/password
   //String RESTURL  = "http://35.166.184.150/geoserver" 
   String RESTURL  = "http://172.31.9.205:80/geoserver" 
   //String RESTURL  = "http://localhost:8080/geoserver";
   String RESTUSER = "admin";
-  String RESTPW   = "xxx" //geoserverPassword
+  String RESTPW   = "" //geoserverPassword
   GeoServerRESTReader reader = new GeoServerRESTReader(RESTURL, RESTUSER, RESTPW);
   GeoServerRESTPublisher publisher = new GeoServerRESTPublisher(RESTURL, RESTUSER, RESTPW);
-  boolean created = publisher.createWorkspace("FriWorkspace")
+  boolean created = publisher.createWorkspace("FridWorkspace")
   println created
 
-  println "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqwednesdayqqqqqqqqqqqqqq"
-*/
+  println "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
+  render "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+
 /*
 	def env = System.getenv()
 	def vcs = env.grep{it.key=='VCAP_SERVICES'} 
