@@ -30,6 +30,16 @@ class PromptController {
         render myprocessAsText
     }
 
+ def env() {
+  def env = System.getenv()
+  String s = ''
+  env.each {
+   s += "$it\n"
+  }
+  println s
+  render "I am env(). See controller output for env variables."
+ }
+
  def index() { 
 
   //this is a temporary server, managed via secgrp,
