@@ -9,17 +9,24 @@ class PromptController {
     Connection conn
     def jsonSlurper
     String geoserverPassword
-
-    def getproperty() {
+    String getproperty(desiredProp) { //e.g. geoserverPassword
+	String returnValue
 	String s = System.getenv('MAVEN_CMD_LINE_ARGS')
 	def t = s.split('-D')
 	t.each { u ->
 	    def v = u.split('=')
-	    if (v[0] == 'alpha') println "alpha is ${v[1]}"
-	    if (v[0] == 'beta')  println "beta is ${v[1]}"
-	    if (v[0] == 'geoserverPassword')  geoserverPassword = v[1]
+	    //Any ampersand in the password must be escaped like this \& 
+	    if (v[0] == desiredProp)  {
+		//kludge to handle embedded equal sign in password:
+		if ((v.size()) == 2) { //e.g. -DgeoserverPassword=abc=def
+		    returnValue = v[1]
+		}
+		if ((v.size()) == 3) { //e.g. -DgeoserverPassword=abc=def
+		    returnValue = v[1]+'='+v[2]
+		}
+	    }
 	}
-        render "Look at println output for getenv() info"
+        returnValue
     }
 
     def myIP() {
@@ -37,6 +44,8 @@ class PromptController {
    s += "$it\n"
   }
   println s
+  println ""
+  println getproperty('geoserverPassword')
   render "I am env(). See controller output for env variables."
  }
 
@@ -48,7 +57,7 @@ class PromptController {
   String RESTURL  = "http://172.31.9.205:80/geoserver" 
   //String RESTURL  = "http://localhost:8080/geoserver";
   String RESTUSER = "admin";
-  String RESTPW   = "" //geoserverPassword
+  String RESTPW   = getproperty('geoserverPassword')
   GeoServerRESTReader reader = new GeoServerRESTReader(RESTURL, RESTUSER, RESTPW);
   GeoServerRESTPublisher publisher = new GeoServerRESTPublisher(RESTURL, RESTUSER, RESTPW);
   boolean created = publisher.createWorkspace("FridWorkspace")
