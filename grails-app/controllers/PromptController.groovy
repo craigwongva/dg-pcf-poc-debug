@@ -19,7 +19,7 @@ class PromptController {
 	Class.forName("org.postgresql.Driver");
         conn = DriverManager.
             //getConnection("jdbc:postgresql://${getproperty('pgdb')}:5432/coastline", getproperty('pgusername'), getproperty('pgpassword'));
-            getConnection("jdbc:postgresql://cl-postgis-db.REPLACEME.us-east-1.rds.amazonaws.com:5432/coastline", "sa", "");
+            getConnection("jdbc:postgresql://cl-postgis-db.redacted.us-east-1.rds.amazonaws.com:5432/coastline", "sa", "");
     }
 
     String getproperty(desiredProp) { //e.g. geoserverPassword
