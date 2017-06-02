@@ -9,6 +9,18 @@ class PromptController {
     Connection conn
     def jsonSlurper
     String geoserverPassword
+
+    PromptController() {
+/*
+        Class.forName("org.h2.Driver");
+        conn = DriverManager.
+            getConnection("jdbc:h2:tcp://localhost/~/valuechick", "sa", "");
+*/
+	Class.forName("org.postgresql.Driver");
+        conn = DriverManager.
+            getConnection("jdbc:postgresql://xxxxxcl-postgis-db.cqxwozfxb9q7.us-east-1.rds.amazonaws.com:5432/coastline", "foo", "bar");
+    }
+
     String getproperty(desiredProp) { //e.g. geoserverPassword
 	String returnValue
 	String s = System.getenv('MAVEN_CMD_LINE_ARGS')
@@ -50,7 +62,7 @@ class PromptController {
  }
 
  def index() { 
-
+/*
   //this is a temporary server, managed via secgrp,
   // using well-publicized user/password
   //String RESTURL  = "http://35.166.184.150/geoserver" 
@@ -62,9 +74,9 @@ class PromptController {
   GeoServerRESTPublisher publisher = new GeoServerRESTPublisher(RESTURL, RESTUSER, RESTPW);
   boolean created = publisher.createWorkspace("FridWorkspace")
   println created
-
+*/
   println "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
-  render "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+  render "srrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
 
 /*
 	def env = System.getenv()
