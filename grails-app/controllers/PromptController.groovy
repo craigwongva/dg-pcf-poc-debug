@@ -18,7 +18,8 @@ class PromptController {
 */
 	Class.forName("org.postgresql.Driver");
         conn = DriverManager.
-            getConnection("jdbc:postgresql://xxxxxcl-postgis-db.cqxwozfxb9q7.us-east-1.rds.amazonaws.com:5432/coastline", "foo", "bar");
+            //getConnection("jdbc:postgresql://${getproperty('pgdb')}:5432/coastline", getproperty('pgusername'), getproperty('pgpassword'));
+            getConnection("jdbc:postgresql://cl-postgis-db.REPLACEME.us-east-1.rds.amazonaws.com:5432/coastline", "sa", "");
     }
 
     String getproperty(desiredProp) { //e.g. geoserverPassword
@@ -38,7 +39,7 @@ class PromptController {
 		}
 	    }
 	}
-        returnValue
+        returnValue.trim()
     }
 
     def myIP() {
