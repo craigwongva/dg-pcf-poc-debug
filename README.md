@@ -1,3 +1,4 @@
+```
 cd ~/pillow/my-first-app #see this 5/22/17 -7:30 for URL describing my-first-app
 vi grails-app/controllers/PromptController.groovy
 mvn clean install
@@ -13,3 +14,10 @@ cd ~/install-cf
 ./cf push craig-geomanager-3 -p /home/ec2-user/pillow/my-first-app/target/my-first-app-1.0-SNAPSHOT.war 
 
 java -jar h2/bin/h2-1.4.193.jar -webAllowOthers &
+```
+
+
+
+Geomanager documentation is here:
+
+https://github.com/geosolutions-it/geoserver-manager/wiki/Various-Examples
